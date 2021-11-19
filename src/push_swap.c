@@ -1,5 +1,9 @@
 #include "../includes/push_swap.h"
 
+// OBJETIVOS:
+// UTILIZAR LISTAS ENCADEADAS AO INVÉS DE ARRAYS
+// TENTAR UMA PRIMEIRA ORDENAÇÃO SIMPLES COM POUCOS ELEMENTOS
+
 int main(int argc, char const **argv)
 {
     char *stack;
@@ -9,7 +13,7 @@ int main(int argc, char const **argv)
     i = 0;
     j = 1;
     stack = (char *)malloc((strlen(*argv) - 1) * sizeof(char));
-    if (argc > 1)    
+    if (argc > 1)
     {
         while (*argv)
         {
