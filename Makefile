@@ -23,6 +23,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
+bonus: all
+
 $(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(OBJ) $(CFLAGS) $(LIBFLAGS) -o $@
 
