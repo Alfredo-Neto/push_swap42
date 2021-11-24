@@ -13,8 +13,8 @@ typedef struct s_node
 
 typedef struct s_stack
 {
-    t_node a;
-    t_node b;
+    t_node *stack_a;
+    t_node *stack_b;
 }t_stack;
 
 #endif

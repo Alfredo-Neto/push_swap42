@@ -29,25 +29,21 @@ void print_list(t_node *head)
 
 int main(int argc, char **argv)
 {
-	t_node *head;
-	t_node *node;
+	t_node *head = NULL;
+	t_node *node = NULL;
 	int i;
 
 	i = 0;
-	node = NULL;
-	head = NULL;
 	if (argc >= 2)
 	{
 		while (argv[i])
 			i++;
-		i--;
-		while (argv[i])
+		while (argv[--i])
 		{
 			node = new_node(node, ft_atoi(argv[i]));
 			push(&head, node);
 			if (i == 1)
 				break ;
-			i--;
 		}
 		print_list(head);
 	}
