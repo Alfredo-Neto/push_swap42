@@ -1,13 +1,13 @@
 #include "../includes/push_swap.h"
 
-void append_to_list(t_node *head, t_node *prev_node)
+void append_to_list(t_node *head, t_node *new_node)
 {
-	t_node *new_node;
+	t_node *node_ptr;
 
-	new_node = head;
-	while (new_node->next != NULL)
-		new_node = new_node->next;
-	new_node->next = prev_node;
+	node_ptr = head;
+	while (node_ptr->next != NULL)
+		node_ptr = node_ptr->next;
+	node_ptr->next = new_node;
 }
 
 void print_list(t_node *head)
