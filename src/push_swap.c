@@ -40,12 +40,12 @@ int main(int argc, char **argv)
 	head = NULL;
 	if (argc >= 2)
 	{
-		node = new_node(node, atoi(argv[1]));
+		node = new_node(node, ft_atoi(argv[1]));
 		head = node;
 		argv += 2;
 		while (*argv)
 		{
-			node = new_node(node, atoi(*argv));
+			node = new_node(node, ft_atoi(*argv));
 			append_to_list(head, node);
 			argv++;
 		}
