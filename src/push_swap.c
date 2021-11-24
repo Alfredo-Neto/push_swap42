@@ -1,13 +1,17 @@
 #include "../includes/push_swap.h"
 
-void append_to_list(t_node *head, t_node *new_node)
+t_node *new_node(t_node *n, int data)
 {
-	t_node *node_ptr;
+	n = (t_node *)malloc(sizeof(t_node));
+	n->data = data;
+	n->next = NULL;
+	return (n);
+}
 
-	node_ptr = head;
-	while (node_ptr->next != NULL)
-		node_ptr = node_ptr->next;
-	node_ptr->next = new_node;
+void push(t_node **head, t_node *new_node)
+{
+	new_node->next = *head;
+	*head = new_node;
 }
 
 void print_list(t_node *head)
@@ -17,39 +21,36 @@ void print_list(t_node *head)
 	node = head;
 	while (node->next != NULL)
 	{
-		printf("%d ", node->data);
+		printf("%d\n", node->data);
 		node = node->next;
 	}
-	printf("%d \n", node->data);
-}
-
-t_node *new_node(t_node *n, int data)
-{
-	n = (t_node *)malloc(sizeof(t_node));
-	n->data = data;
-	n->next = NULL;
-	return (n);
+	printf("%d\n", node->data);
 }
 
 int main(int argc, char **argv)
 {
 	t_node *head;
 	t_node *node;
+	int i;
 
+	i = 0;
 	node = NULL;
 	head = NULL;
 	if (argc >= 2)
 	{
-		node = new_node(node, ft_atoi(argv[1]));
-		head = node;
-		argv += 2;
-		while (*argv)
+		while (argv[i])
+			i++;
+		i--;
+		while (argv[i])
 		{
-			node = new_node(node, ft_atoi(*argv));
-			append_to_list(head, node);
-			argv++;
+			node = new_node(node, ft_atoi(argv[i]));
+			push(&head, node);
+			if (i == 1)
+				break ;
+			i--;
 		}
 		print_list(head);
+
 	}
 	else
 	{
