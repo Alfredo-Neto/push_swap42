@@ -50,7 +50,6 @@ int main(int argc, char **argv)
 			i--;
 		}
 		print_list(head);
-
 	}
 	else
 	{
