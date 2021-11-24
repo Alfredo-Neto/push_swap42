@@ -1,24 +1,26 @@
 #include "../includes/push_swap.h"
 
-t_node *new_node(t_node *n, int data)
+t_node *new_node(int data)
 {
+	t_node *n;
+
 	n = (t_node *)malloc(sizeof(t_node));
 	n->data = data;
 	n->next = NULL;
 	return (n);
 }
 
-void push(t_node **head, t_node *new_node)
+void push(t_node **stack, t_node *new_node)
 {
-	new_node->next = *head;
-	*head = new_node;
+	new_node->next = *stack;
+	*stack = new_node;
 }
 
-void print_list(t_node *head)
+void print_stack(t_node *stack)
 {
 	t_node *node;
 
-	node = head;
+	node = stack;
 	while (node->next != NULL)
 	{
 		printf("%d\n", node->data);
@@ -29,7 +31,7 @@ void print_list(t_node *head)
 
 int main(int argc, char **argv)
 {
-	t_node *head = NULL;
+	t_node *stack = NULL;
 	t_node *node = NULL;
 	int i;
 
@@ -40,12 +42,12 @@ int main(int argc, char **argv)
 			i++;
 		while (argv[--i])
 		{
-			node = new_node(node, ft_atoi(argv[i]));
-			push(&head, node);
+			node = new_node(ft_atoi(argv[i]));
+			push(&stack, node);
 			if (i == 1)
 				break ;
 		}
-		print_list(head);
+		print_stack(stack);
 	}
 	else
 	{
