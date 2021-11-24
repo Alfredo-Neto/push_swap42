@@ -52,6 +52,9 @@ int main(int argc, char **argv)
 		print_list(head);
 	}
 	else
-		ft_putstr_fd("Poucos argumentos para a execução do programa!", 1);
+	{
+		ft_putstr_fd("Error:\n", 1);
+		ft_putstr_fd("	Too few arguments provided!", 1);
+	}
 	return (0);
 }
