@@ -52,6 +52,6 @@ int main(int argc, char **argv)
 		print_list(head);
 	}
 	else
-		printf("Poucos argumentos para a execução do programa!");
+		ft_putstr_fd("Poucos argumentos para a execução do programa!", 1);
 	return (0);
 }
