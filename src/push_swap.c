@@ -61,9 +61,6 @@ void rotate(t_node **stack)
 
 void reverse_rotate(t_node **stack)
 {
-
-	// stack(top) => 1 -> 2 -> 3 -> 4 -> 5 => NULL(bottom)]
-	// temp -> 5
 	t_node *last;
 	t_node *temp;
 
@@ -77,6 +74,18 @@ void reverse_rotate(t_node **stack)
 			temp = temp->next;
 	}
 	push(stack, last);
+}
+
+void swap(t_node **stack)
+{
+	// stack(top) => 1 -> 2 -> 3 -> 4 -> 5 => NULL(bottom)
+	// temp -> 1
+	t_node *temp;
+
+	temp = *stack;
+	*stack = (*stack)->next;
+	temp->next = (*stack)->next;
+	(*stack)->next = temp;
 }
 
 int main(int argc, char **argv)
@@ -102,7 +111,7 @@ int main(int argc, char **argv)
 				break ;
 		}
 		// print_stack(stack);
-		reverse_rotate(&stack);
+		swap(&stack);
 		print_stack(stack);
 	}
 	else
