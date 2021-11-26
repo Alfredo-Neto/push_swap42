@@ -59,24 +59,37 @@ void rotate(t_node **stack)
 	temp->next = NULL;
 }
 
-t_node *reverse_rotate(t_node **stack)
+void reverse_rotate(t_node **stack)
 {
 
 	// stack(top) => 1 -> 2 -> 3 -> 4 -> 5 => NULL(bottom)]
 	// temp -> 5
-	
+	t_node *last;
+	t_node *temp;
+
+	temp = *stack;
+	last = get_bottom_element(temp);
+	while (temp->next != NULL)
+	{
+		if (temp->next->next == NULL)
+			temp->next = NULL;
+		else
+			temp = temp->next;
+	}
+	push(stack, last);
 }
 
 int main(int argc, char **argv)
 {
-	t_node *stack = NULL;
-	t_node *node = NULL;
+	t_node	*stack = NULL;
+	t_node	*node = NULL;
 	int i;
 
 	i = 0;
 
 	// Se está ordenada
 	// Se existem duplicatas
+	// limpar a stack
 	if (argc >= 2)
 	{
 		while (argv[i])
@@ -89,7 +102,7 @@ int main(int argc, char **argv)
 				break ;
 		}
 		// print_stack(stack);
-		rotate(&stack);
+		reverse_rotate(&stack);
 		print_stack(stack);
 	}
 	else
