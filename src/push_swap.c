@@ -10,7 +10,7 @@ t_node *new_node(int data)
 	return (n);
 }
 
-void push(t_node **stack, t_node *new_node)
+void push_to_stack(t_node **stack, t_node *new_node)
 {
 	new_node->next = *stack;
 	*stack = new_node;
@@ -73,13 +73,11 @@ void reverse_rotate(t_node **stack)
 		else
 			temp = temp->next;
 	}
-	push(stack, last);
+	push_to_stack(stack, last);
 }
 
 void swap(t_node **stack)
 {
-	// stack(top) => 1 -> 2 -> 3 -> 4 -> 5 => NULL(bottom)
-	// temp -> 1
 	t_node *temp;
 
 	temp = *stack;
@@ -88,10 +86,21 @@ void swap(t_node **stack)
 	(*stack)->next = temp;
 }
 
+void push(t_stack *stack_a, t_stack *stack_b)
+{
+	t_node *temp;
+
+	temp = stack_a->head;
+	stack_a->head = stack_a->head->next;
+	push_to_stack(&stack_b->head, temp);
+}
+
 int main(int argc, char **argv)
 {
-	t_node	*stack = NULL;
+	t_stacks	stacks;
+	// t_stack	*stack_b = NULL;
 	t_node	*node = NULL;
+	// stack_a.head = NULL;
 	int i;
 
 	i = 0;
@@ -106,13 +115,16 @@ int main(int argc, char **argv)
 		while (argv[--i])
 		{
 			node = new_node(ft_atoi(argv[i]));
-			push(&stack, node);
+			push_to_stack(&stacks.stack_a.head, node);
 			if (i == 1)
 				break ;
 		}
-		// print_stack(stack);
-		swap(&stack);
-		print_stack(stack);
+		// reverse_rotate(&stacks.stack_a.head);
+		print_stack(stacks.stack_a.head);
+		// push(stack_a, stack_b);
+		// print_stack(stack_a->head);
+		// puts("\n");
+		// print_stack(stack_b->head);
 	}
 	else
 	{
