@@ -49,15 +49,22 @@ void	append_to_stack(t_node **stack, t_node *new)
 		*stack = new;
 }
 
-t_node	*rotate(t_node *stack)
+void rotate(t_node **stack)
 {
 	t_node *temp;
 	
-	temp = stack;
-	stack = stack->next;
-	append_to_stack(&stack, temp);
+	temp = *stack;
+	*stack = (*stack)->next;
+	append_to_stack(&(*stack), temp);
 	temp->next = NULL;
-	return (stack);
+}
+
+t_node *reverse_rotate(t_node **stack)
+{
+
+	// stack(top) => 1 -> 2 -> 3 -> 4 -> 5 => NULL(bottom)]
+	// temp -> 5
+	
 }
 
 int main(int argc, char **argv)
@@ -82,7 +89,7 @@ int main(int argc, char **argv)
 				break ;
 		}
 		// print_stack(stack);
-		stack = rotate(stack);
+		rotate(&stack);
 		print_stack(stack);
 	}
 	else
