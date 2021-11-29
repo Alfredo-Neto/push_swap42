@@ -5,7 +5,7 @@ INCLUDES = includes
 HEADERS = $(INCLUDES)/push_swap.h
 INCLUDES := $(addprefix -I, $(HEADERS))
 
-SRC_FILES = push_swap.c
+SRC_FILES = push_swap.c do_print_actions.c stack_operations.c actions.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
