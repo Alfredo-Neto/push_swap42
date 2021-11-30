@@ -30,7 +30,7 @@ $(NAME): $(LIBFT) $(OBJ)
 	$(CC) $(OBJ) $(CFLAGS) $(LIBFLAGS) -o $@
 	@echo "\033[32mDone!\033[0m"
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c includes
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 $(LIBFT):
