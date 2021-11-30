@@ -14,7 +14,7 @@ typedef struct s_node
 typedef struct s_stack
 {
 	t_node  *head;
-	int size;
+	int		size;
 }t_stack;
 
 typedef struct s_stacks
@@ -47,9 +47,12 @@ void	do_print_rrr(t_stacks *stack);
 // Stack basic operations
 t_node	*new_node(int data);
 void	push_to_stack(t_node **stack, t_node *new_node);
-void	print_stack(t_node *stack);
+void	print_stacks(t_stack *stack_a, t_stack *stack_b);
+void	print_stack_a(t_stack *stack);
+void	print_stack_b(t_stack *stack);
 t_node	*get_bottom_element(t_node *stack);
 void	append_to_stack(t_node **stack, t_node *new);
+int		stack_size(t_stack stack);
 
 
 #endif
