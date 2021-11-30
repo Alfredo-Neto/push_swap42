@@ -6,7 +6,7 @@
 /*   By: ade-agui <ade-agui@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 18:12:05 by ade-agui          #+#    #+#             */
-/*   Updated: 2021/11/29 18:50:50 by ade-agui         ###   ########.fr       */
+/*   Updated: 2021/11/29 21:44:56 by ade-agui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int main(int argc, char **argv)
 			if (i == 1)
 				break ;	
 		}
-		do_print_sa(&stacks);
-		do_print_sa(&stacks);
-		do_print_sa(&stacks);
-		do_print_sa(&stacks);
+		do_print_pb(&stacks);
+		do_print_pb(&stacks);
+		do_print_pb(&stacks);
+		do_print_rrr(&stacks);
 		printf("---------------------------\n");
 		print_stack(stacks.stack_a.head);
 

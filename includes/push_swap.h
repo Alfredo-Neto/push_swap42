@@ -33,6 +33,16 @@ void	push_a(t_stack *stack_a, t_stack *stack_b);
 
 // Call and print actions
 void	do_print_sa(t_stacks *stack);
+void	do_print_sb(t_stacks *stack);
+void	do_print_ss(t_stacks *stack);
+void	do_print_pa(t_stacks *stack);
+void	do_print_pb(t_stacks *stack);
+void	do_print_ra(t_stacks *stack);
+void	do_print_rb(t_stacks *stack);
+void	do_print_rr(t_stacks *stack);
+void	do_print_rra(t_stacks *stack);
+void	do_print_rrb(t_stacks *stack);
+void	do_print_rrr(t_stacks *stack);
 
 // Stack basic operations
 t_node	*new_node(int data);
