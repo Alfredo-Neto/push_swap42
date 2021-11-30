@@ -16,7 +16,7 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 LIBFLAGS = -L$(LIBFT_DIR) -lft
 
-RM = rm -rf
+RM = rm -f
 
 CC = clang
 CFLAGS = -Wall -Wextra -Werror
@@ -26,7 +26,9 @@ all: $(NAME)
 bonus: all
 
 $(NAME): $(LIBFT) $(OBJ)
+	@echo "\033[32mBuilding the executable file...\033[0m"
 	$(CC) $(OBJ) $(CFLAGS) $(LIBFLAGS) -o $@
+	@echo "\033[32mDone!\033[0m"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
@@ -41,8 +43,9 @@ clean:
 	make -C $(LIBFT_DIR) fclean
 
 fclean: clean
-	$(RM) $(OBJ_DIR)
+	$(RM) $(OBJ)
 	$(RM) $(NAME)
+	@echo "\033[31mExecutable and objects cleaned!\033[0m"
 
 re: fclean all
 
