@@ -6,7 +6,7 @@
 #    By: ade-agui <ade-agui@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/03 14:03:05 by ade-agui          #+#    #+#              #
-#    Updated: 2021/12/03 14:07:09 by ade-agui         ###   ########.fr        #
+#    Updated: 2021/12/13 02:18:28 by ade-agui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ INCLUDES = includes
 HEADERS := $(INCLUDES)/push_swap.h
 INCLUDES := $(addprefix -I, $(INCLUDES))
 
-SRC_FILES = push_swap.c do_print_actions.c stack_operations.c actions.c
+SRC_FILES = push_swap.c do_print_actions.c stack_operations.c actions.c \
+			sort_small.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 

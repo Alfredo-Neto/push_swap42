@@ -6,7 +6,7 @@
 /*   By: ade-agui <ade-agui@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 18:13:04 by ade-agui          #+#    #+#             */
-/*   Updated: 2021/11/30 19:09:26 by ade-agui         ###   ########.fr       */
+/*   Updated: 2021/12/13 02:34:19 by ade-agui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,22 @@ int stack_size(t_stack stack)
 	}
 	stack.size++;
 	return (stack.size);
+}
+
+int get_stack_size(t_stacks *stacks)
+{
+	t_node *temp = NULL;
+	int size;
+
+	size = stacks->stack_a.size;
+	temp = stacks->stack_a.head;
+	while (temp->next != NULL)
+	{
+		size++;
+		temp = temp->next;
+	}
+	size++;
+	return (size);
 }
 
 void	append_to_stack(t_node **stack, t_node *new)

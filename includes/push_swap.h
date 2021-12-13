@@ -54,6 +54,10 @@ void	print_stack_b(t_stack *stack);
 t_node	*get_bottom_element(t_node *stack);
 void	append_to_stack(t_node **stack, t_node *new);
 int		stack_size(t_stack stack);
+int get_stack_size(t_stacks *stacks);
+
+// Sort operations
+void	sort_stack(t_stacks *stack);
 
 
 #endif
