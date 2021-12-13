@@ -44,7 +44,7 @@ static void    sort_three(t_stacks *stack)
         return ;
 }
 
-// void sort_five(t_stacks *stack)
+// static void sort_five(t_stacks *stack)
 // {
         // 1 - dar dois pb
         // 2 - sort_three(stack_b)
