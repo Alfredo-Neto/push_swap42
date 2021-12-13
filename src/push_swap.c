@@ -6,7 +6,7 @@
 /*   By: ade-agui <ade-agui@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 18:12:05 by ade-agui          #+#    #+#             */
-/*   Updated: 2021/11/30 19:06:01 by ade-agui         ###   ########.fr       */
+/*   Updated: 2021/12/13 01:52:34 by ade-agui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 int main(int argc, char **argv)
 {
 	t_stacks	stacks;
-	t_node	*node = NULL;
+	t_node		*node = NULL;
 	int i;
 
 	i = 0;
+
 	// Se está ordenada
 	// Se existem duplicatas
 	// limpar a stack
@@ -34,25 +35,19 @@ int main(int argc, char **argv)
 			if (i == 1)
 				break ;
 		}
-		do_print_pb(&stacks);
-		do_print_pb(&stacks);
-		do_print_pb(&stacks);
-		do_print_pb(&stacks);
-		do_print_pb(&stacks);
-		do_print_pb(&stacks);
+		// do_print_pb(&stacks);
+		// do_print_pb(&stacks);
+		// do_print_pb(&stacks);
+		// do_print_pb(&stacks);
+		// do_print_pb(&stacks);
+		// do_print_pb(&stacks);
 		
 		// do_print_rrr(&stacks);
-		printf("---------------------------\n");
 		
 		print_stacks(&stacks.stack_a, &stacks.stack_b);
 
-		// printf("---------------------------\n");
-		// push_a(&stacks.stack_a, &stacks.stack_b);
-		// print_stack(stacks.stack_b.head);
-		// print_stack(stacks.stack_b.head);
-		// push(stack_a, stack_b);
-		// print_stack(stack_a->head);
-		// puts("\n");
+		push_b(&stacks.stack_a, &stacks.stack_b);
+		puts("\n");
 		// print_stack(stack_b->head);
 	}
 	else

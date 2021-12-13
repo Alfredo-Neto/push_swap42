@@ -6,7 +6,7 @@
 #    By: ade-agui <ade-agui@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/03 14:03:05 by ade-agui          #+#    #+#              #
-#    Updated: 2021/12/03 14:03:55 by ade-agui         ###   ########.fr        #
+#    Updated: 2021/12/03 14:07:09 by ade-agui         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 LIBFLAGS = -L$(LIBFT_DIR) -lft
 
+MAKEPATH = mkdir -p
 RM = rm -f
 
 CC = gcc
@@ -49,7 +50,7 @@ $(LIBFT):
 	make -C $(LIBFT_DIR)
 
 $(OBJ_DIR):
-	mkdir -p obj
+	$(MAKEPATH) $@
 
 clean:
 	make -C $(LIBFT_DIR) fclean

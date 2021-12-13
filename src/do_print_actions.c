@@ -6,7 +6,7 @@
 /*   By: ade-agui <ade-agui@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 18:15:36 by ade-agui          #+#    #+#             */
-/*   Updated: 2021/11/29 23:28:20 by ade-agui         ###   ########.fr       */
+/*   Updated: 2021/12/13 01:53:56 by ade-agui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ void do_print_ss(t_stacks *stack)
 
 void do_print_ra(t_stacks *stack)
 {
-    reverse_rotate(&stack->stack_a.head);
+    rotate(&stack->stack_a.head);
     write(1, "ra\n", 3);
 }
 
 void do_print_rb(t_stacks *stack)
 {
-    reverse_rotate(&stack->stack_b.head);
+    rotate(&stack->stack_b.head);
     write(1, "rb\n", 3);
 }
 
