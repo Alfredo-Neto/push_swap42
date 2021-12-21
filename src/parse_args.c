@@ -1,16 +1,17 @@
 #include "../includes/push_swap.h"
 
-int *parse_args(char **argv)
+int *parse_args(int argc, char **argv)
 {
-    int i;
+    int count;
     int *parsed_args;
 
-    parsed_args = NULL;
-	i = 0;
-    while (argv[i])
+    parsed_args = malloc(sizeof(int) * argc);
+
+    count = 1;
+    while (count < argc)
     {
-        parsed_args[i] = ft_atoi(argv[i]);
-        i++;
+        parsed_args[count] = ft_atoi(argv[count]);
+        count++;
     }
     return (parsed_args);
 }

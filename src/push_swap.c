@@ -18,24 +18,32 @@ int main(int argc, char **argv)
 	// t_node		*node = NULL;
 	// int i;
 	int count = 0;
-	int *integer_argv;
 	int *indexes;
+	int *integer_argv;
 
 	// i = 0;
 
 	// Se está ordenada
 	// Se existem duplicatas
 	// limpar a stack
-	
-	integer_argv = parse_args(argv);
+	integer_argv = parse_args(argc, argv);
 	indexes = return_array_of_indexes(argc, integer_argv);
+	while (count < argc)
+	{
+		printf("%d ", integer_argv[count]);
+		count++;
+	}
+	printf("\n");
 
-	while (indexes[count])
+	printf("----------------------------");
+
+	while (count < argc)
 	{
 		printf("%d ", indexes[count]);
 		count++;
 	}
 	printf("\n");
+
 
 	// ft_bzero(&stacks, sizeof(t_stacks));
 	// if (argc >= 2)
