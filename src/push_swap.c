@@ -14,37 +14,49 @@
 
 int main(int argc, char **argv)
 {
-	t_stacks	stacks;
-	t_node		*node = NULL;
-	int i;
+	// t_stacks	stacks;
+	// t_node		*node = NULL;
+	// int i;
+	int count = 0;
+	int *integer_argv;
+	int *indexes;
 
-	i = 0;
+	// i = 0;
 
 	// Se está ordenada
 	// Se existem duplicatas
 	// limpar a stack
 	
-	ft_bzero(&stacks, sizeof(t_stacks));
-	if (argc >= 2)
-	{
-		while (argv[i])
-			i++;
-		while (argv[--i])
-		{
-			node = new_node(ft_atoi(argv[i]));
-			push_to_stack(&stacks.stack_a.head, node);
-			if (i == 1)
-				break ;
-		}
-		stacks.stack_a.size = get_stack_size(&stacks);
-		sort_stack(&stacks);
-		print_stacks(&stacks.stack_a, &stacks.stack_b);
-	}
-	else
-	{
-		ft_putstr_fd("Error:\n", 1);
-		ft_putstr_fd("	Too few arguments provided!", 1);
-	}
+	integer_argv = parse_args(argv);
+	indexes = return_array_of_indexes(argc, integer_argv);
 
+	while (indexes[count])
+	{
+		printf("%d ", indexes[count]);
+		count++;
+	}
+	printf("\n");
+
+	// ft_bzero(&stacks, sizeof(t_stacks));
+	// if (argc >= 2)
+	// {
+	// 	while (argv[i])
+	// 		i++;
+	// 	while (argv[--i])
+	// 	{
+	// 		node = new_node(*integer_argv);
+	// 		push_to_stack(&stacks.stack_a.head, node);
+	// 		if (i == 1)
+	// 			break ;
+	// 	}
+	// 	stacks.stack_a.size = get_stack_size(&stacks);
+	// 	sort_stack(&stacks);
+	// 	print_stacks(&stacks.stack_a, &stacks.stack_b);
+	// }
+	// else
+	// {
+	// 	ft_putstr_fd("Error:\n", 1);
+	// 	ft_putstr_fd("	Too few arguments provided!", 1);
+	// }
 	return (0);
 }

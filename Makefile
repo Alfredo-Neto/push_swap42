@@ -18,7 +18,7 @@ HEADERS := $(INCLUDES)/push_swap.h
 INCLUDES := $(addprefix -I, $(INCLUDES))
 
 SRC_FILES = push_swap.c do_print_actions.c stack_operations.c actions.c \
-			sort_small.c
+			sort_small.c parse_args.c get_index.c quick_sort.c
 
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 
@@ -34,6 +34,7 @@ RM = rm -f
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+VALGRIND = valgrind -q --leak-check=full --show-leak-kinds=all -s --track-origins=yes
 
 all: $(NAME)
 
@@ -52,6 +53,9 @@ $(LIBFT):
 
 $(OBJ_DIR):
 	$(MAKEPATH) $@
+
+run: all
+	$(VALGRIND) ./$(NAME) 2 3 1 5 4
 
 clean:
 	make -C $(LIBFT_DIR) fclean

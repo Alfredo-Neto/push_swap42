@@ -27,12 +27,12 @@ static int *get_array_indexes(int *cpy_index, int size)
     return (cpy_index);
 }
 
-int *return_array_of_indexes(int argc, char **argv)
+int *return_array_of_indexes(int argc, int *argv)
 {
     int *copy;
     int *result;
 
-    copy = array_cpy(*argv, argc);
+    copy = array_cpy(argv, argc);
     result = get_array_indexes(copy, argc);
     return (result);
 }
