@@ -8,7 +8,7 @@
 typedef struct s_node
 {
 	int data;
-	int *index;
+	int index;
 	struct s_node *next;
 }t_node;
 

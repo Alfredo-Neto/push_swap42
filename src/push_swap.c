@@ -23,6 +23,7 @@ int main(int argc, char **argv)
 	// Se está ordenada
 	// Se existem duplicatas
 	// limpar a stack
+	
 	ft_bzero(&stacks, sizeof(t_stacks));
 	if (argc >= 2)
 	{
@@ -36,20 +37,8 @@ int main(int argc, char **argv)
 				break ;
 		}
 		stacks.stack_a.size = get_stack_size(&stacks);
-		// do_print_pb(&stacks);
-		// do_print_pb(&stacks);
-		// do_print_pb(&stacks);
-		// do_print_pb(&stacks);
-		// do_print_pb(&stacks);
-		// do_print_pb(&stacks);
-		
-		// do_print_rrr(&stacks);
-
 		sort_stack(&stacks);
-
 		print_stacks(&stacks.stack_a, &stacks.stack_b);
-
-		// print_stack(stack_b->head);
 	}
 	else
 	{

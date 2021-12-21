@@ -46,15 +46,21 @@ static void    sort_three(t_stacks *stack)
 
 // static void sort_five(t_stacks *stack)
 // {
-        // 1 - dar dois pb
-        // 2 - sort_three(stack_b)
-        // 3 - sort_two(stack_a)
-        // 4 - pa
-        // 5 - verificar na stack_a se o elemento eh: o maior de todos(ra),
-        //     o menor de todos(nada), o segundo menor de todos(sa)
-        // 6 - executar as acoes correspondentes
-        // pa
-        // repetir passos 5 e 6 para o ultimo elemento
+    //while(numero->next != NULL)
+    // {
+    //     //se index for o maior, menor ou segundo menor
+                // se pb_counter < 2
+                    // pb
+                    // pb_counter++
+            // senao
+                // ra
+    // }
+    // sort_three(stack_a)
+    // pa
+    // se numero maior
+        // ra
+    // senao se numero segundo menor
+        // sa
 // }
 
 void    sort_stack(t_stacks *stack)

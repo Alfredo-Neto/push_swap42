@@ -59,7 +59,7 @@ int main()
 {
     int arr[] = {8, 4, 7, 5, 2, 1};
             //   5  2  4  3  1  0
-    size_t n = sizeof(arr) / sizeof(arr[0]); 
+    size_t n = sizeof(arr) / sizeof(arr[0]);
 
 	int *arr_ptr = arr;
     
