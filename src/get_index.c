@@ -1,24 +1,38 @@
 #include "../includes/push_swap.h"
 
-int *array_cpy(int const *src, size_t len)
+static int *array_cpy(int const *src, size_t len)
 {
    int *dest = malloc(len * sizeof(int));
    ft_memcpy(dest, src, len * sizeof(int));
    return (dest);
 }
 
-int main(void)
+static int *get_array_indexes(int *cpy_index, int size)
 {
-    int i = 0;
-    int meu_arr[] = {1, 2, 3, 4, 5};
+    int i;
+    int j;
+    int *index;
 
-    int *resultado = array_cpy(meu_arr, (sizeof(meu_arr) / sizeof(meu_arr[0])));
-    while (resultado[i])
+    i = 0;
+    index = array_cpy(cpy_index, size);
+    quick_sort(index, size);
+    while (i < size)
     {
-        printf("%d ", resultado[i]);
+        j = 0;
+        while (cpy_index[i] != index[j])
+            j++;
+        cpy_index[i] = j;
         i++;
     }
-    printf("\n");
-    
-    return 0;
+    return (cpy_index);
+}
+
+int *return_array_of_indexes(int argc, char **argv)
+{
+    int *copy;
+    int *result;
+
+    copy = array_cpy(*argv, argc);
+    result = get_array_indexes(copy, argc);
+    return (result);
 }
