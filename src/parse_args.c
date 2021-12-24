@@ -2,16 +2,15 @@
 
 int *parse_args(int argc, char **argv)
 {
-    int count;
+    int i;
     int *parsed_args;
-
+    
     parsed_args = malloc(sizeof(int) * argc);
-
-    count = 1;
-    while (count < argc)
+    i = 0;
+    while (i < argc)
     {
-        parsed_args[count] = ft_atoi(argv[count]);
-        count++;
+        parsed_args[i] = ft_atoi(argv[i]);
+        i++;
     }
     return (parsed_args);
 }

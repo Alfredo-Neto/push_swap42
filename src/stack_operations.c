@@ -12,12 +12,13 @@
 
 #include "../includes/push_swap.h"
 
-t_node *new_node(int data)
+t_node *new_node(int data, int index)
 {
 	t_node *n;
 
 	n = (t_node *)malloc(sizeof(t_node));
 	n->data = data;
+	n->index = index;
 	n->next = NULL;
 	return (n);
 }

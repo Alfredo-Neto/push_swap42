@@ -46,7 +46,7 @@ void	do_print_rrb(t_stacks *stack);
 void	do_print_rrr(t_stacks *stack);
 
 // Stack basic operations
-t_node	*new_node(int data);
+t_node	*new_node(int data, int index);
 void	push_to_stack(t_node **stack, t_node *new_node);
 void	print_stacks(t_stack *stack_a, t_stack *stack_b);
 void	print_stack_a(t_stack *stack);
