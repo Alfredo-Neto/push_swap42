@@ -44,24 +44,34 @@ static void    sort_three(t_stacks *stack)
         return ;
 }
 
-// static void sort_five(t_stacks *stack)
-// {
-    //while(numero->next != NULL)
-    // {
-    //     //se index for o maior, menor ou segundo menor
-                // se pb_counter < 2
-                    // pb
-                    // pb_counter++
-            // senao
-                // ra
-    // }
-    // sort_three(stack_a)
-    // pa
-    // se numero maior
-        // ra
-    // senao se numero segundo menor
-        // sa
-// }
+static void sort_five(t_stacks *stacks)
+{
+    t_node *temp;
+    int pb_counter;
+
+    pb_counter = 0;
+    temp = stacks->stack_a.head;
+    while(temp->next != NULL)
+    {
+        if (temp->index == stacks->stack_a.max || temp->index == 0 || temp->index == 1)
+        {
+            if (pb_counter < 2)
+            {
+                do_print_pb(stacks);
+                pb_counter++;
+            }
+        }
+        else
+            do_print_ra(stacks);
+        temp = temp->next;
+    }
+    sort_three(stacks);
+    do_print_pa(stacks);
+    if (temp->index == stacks->stack_a.max)
+        do_print_ra(stacks);
+    else if (temp->index == 1)
+        do_print_sa(stacks);
+}
 
 void    sort_stack(t_stacks *stack)
 {
@@ -71,6 +81,6 @@ void    sort_stack(t_stacks *stack)
          sort_two(stack);
     if (stack->stack_a.size == 3)
         sort_three(stack);
-    // if (stack->stack_a.size > 3 && stack->stack_a.size <= 5)
-    //      sort_five(stack);  
+    if (stack->stack_a.size > 3 && stack->stack_a.size <= 5)
+         sort_five(stack);  
 }

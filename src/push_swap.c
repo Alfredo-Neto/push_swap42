@@ -38,9 +38,18 @@ int main(int argc, char **argv)
 		}
 		stacks.stack_a.size = get_stack_size(&stacks);
 		sort_stack(&stacks);
-		// print_stacks(&stacks.stack_a, &stacks.stack_b);
 
-	printf("----------------------------\n");
+		// save the highest value in indexes array into struct
+		int count = 0;
+		int max = 0;
+		while (count < argc)
+		{
+			if (indexes[count] > max)
+				max = indexes[count];
+			count++;
+		}
+		stacks.stack_a.max = max;
+		printf("Maior: %d\n", stacks.stack_a.max);
 	}
 	else
 	{

@@ -16,6 +16,7 @@ typedef struct s_stack
 {
 	t_node  *head;
 	int		size;
+	int		max;
 }t_stack;
 
 typedef struct s_stacks
